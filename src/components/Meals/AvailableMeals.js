@@ -31,6 +31,12 @@ const DUMMY_MEALS = [
       description: 'Healthy...and green...',
       price: 18.99,
     },
+    {
+      id: 'm5',
+      name: 'Chicken Roast',
+      description: 'New dish',
+      price: 20.99,
+    }
 ];
 
 
