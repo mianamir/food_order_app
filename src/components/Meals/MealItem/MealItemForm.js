@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './MealItemForm.module.css';
 
 
-const MealItemForm = () => {
+const MealItemForm = (props) => {
     return (
         <form className={classes.form}>
             <input/>
@@ -14,3 +14,31 @@ const MealItemForm = () => {
 
 
 export default MealItemForm;
+
+
+
+
+function getSelectedRole(item: any, profile: any){
+    return item.cardlink?.split('roles')[0] + "roles=" + profile?.roleName.toLowerCase();
+
+} // getSelectedRole ends
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
