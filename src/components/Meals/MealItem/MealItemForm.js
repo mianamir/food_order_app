@@ -18,14 +18,6 @@ export default MealItemForm;
 
 
 
-function getSelectedRole(item: any, profile: any){
-    return item.cardlink?.split('roles')[0] + "roles=" + profile?.roleName.toLowerCase();
-
-} // getSelectedRole ends
-
-
-
-
 
 
 
