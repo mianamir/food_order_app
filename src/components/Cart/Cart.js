@@ -18,17 +18,20 @@ const Cart = (props) => {
     );
 
     return (
-        <Modal>
+        <Modal onClose={props.onClose}>
         {cartItems}
-        <id className={classes.total}>
+        <div className={classes.total}>
             <span>Total Amount</span>
             <span>23.45</span>
-        </id>
-        <id className={classes.actions}>
-            <button className={classes['button--all']}>Close</button>
+        </div>
+        <div className={classes.actions}>
+            <button 
+            className={classes['button--all']} 
+            onClick={props.onClose}>Close</button>
+
             <button className={classes.button}>Order</button>
 
-        </id>
+        </div>
     </Modal>
     );
 };
