@@ -8,6 +8,8 @@ import CartContext from '../../store/cart-context';
 
 import { formatAmount } from '../utils/CommonHelpers';
 
+import CartItem from './Cart-Items';
+
 
 const Cart = (props) => {
 
@@ -15,9 +17,24 @@ const Cart = (props) => {
 
     const totalAmount = formatAmount(cartCtx.totalAmount);
 
+    const hasItems = cartCtx.items.length > 0;
+
+    const cartItemAddHandler = item => {};
+
+    const cartItemRemoveHandler = id => {};
+
     const cartItems = (
         <ul className={classes['cart-items']}>
-        {cartCtx.items.map((item) => <li>{item.name}</li>)}
+        {cartCtx.items.map((item) => 
+        <CartItem 
+        key={item.id}
+        name={item.name}
+        amount={item.amount}
+        price={item.price}
+        onRemove={cartItemRemoveHandler.bind(null, item.id)}
+        onAdd={cartItemAddHandler.bind(null, item)}
+        />
+        )}
     </ul>
     );
 
@@ -26,14 +43,14 @@ const Cart = (props) => {
         {cartItems}
         <div className={classes.total}>
             <span>Total Amount</span>
-            <span>23.45</span>
+            <span>{totalAmount}</span>
         </div>
         <div className={classes.actions}>
             <button 
             className={classes['button--all']} 
             onClick={props.onClose}>Close</button>
 
-            <button className={classes.button}>Order</button>
+            { hasItems && <button className={classes.button}>Order</button> }
 
         </div>
     </Modal>
