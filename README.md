@@ -1,4 +1,28 @@
 # Food Order App using React.js
 
+Developed the following modules using React.js
 
-<img width="1440" alt="food_order_app" src="https://user-images.githubusercontent.com/10258138/153634994-a9f13676-ea44-4d39-9d5b-5880fc8431c5.png">
+
+`Beautiful UI`
+
+`Food Items Langing Page`
+
+`Meals`
+
+`Add to Cart funtionality`
+
+``` 
+React.js Modules Used:
+
+Managed the UI using React Components
+Handled the state lifecycle using React Hooks (useState, useEffect, useContext, useReducer)
+For accessing the DOM elements used Context provider 
+```
+ 
+
+<hr/>
+
+## Demo of Food Order React App
+
+https://user-images.githubusercontent.com/10258138/157951592-9558dd01-a9af-4e36-ad47-801066450961.mp4
+
