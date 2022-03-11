@@ -16,12 +16,16 @@ const Cart = (props) => {
     const cartCtx = useContext(CartContext);
 
     const totalAmount = formatAmount(cartCtx.totalAmount);
-
+    
     const hasItems = cartCtx.items.length > 0;
 
-    const cartItemAddHandler = item => {};
+    const cartItemAddHandler = item => {
+        cartCtx.addItem(item);
+    };
 
-    const cartItemRemoveHandler = id => {};
+    const cartItemRemoveHandler = id => {
+        cartCtx.removeItem(id);
+    };
 
     const cartItems = (
         <ul className={classes['cart-items']}>

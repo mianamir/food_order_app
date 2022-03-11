@@ -42,7 +42,39 @@ const cartReducer = (state, action) => {
             items: updatedItems,
             totalAmount: updatedTotalAmount,
         };
-    }
+    } // ADD item if ends
+
+    if (action.type === 'REMOVE') {
+        const existingCartItemIndex = state.items.findIndex(
+            (item) => item.id === action.id
+        );
+        const existingItem = state.items[existingCartItemIndex];
+
+        const updatedTotalAmount = state.totalAmount - existingItem.price;
+
+        let updatedItems;
+
+        if (existingItem.amount === 1) {
+            // means last item in the cart and we have to clean the cart array
+            updatedItems = state.items.filter(item => item.id !== action.id); // filter give new array
+        } else {
+            // bigger than 1 item in the cart array
+            const updatedItem = {...existingItem, amount: existingItem.amount - 1};
+
+            updatedItems = [...state.items];
+
+            // override the existing items with new item
+            updatedItems[existingCartItemIndex] = updatedItem;
+
+        }
+        
+        // return the new state object
+        return {
+            items: updatedItems,
+            totalAmount: updatedTotalAmount
+        };
+
+    }; // REMOVE item if ends
 
     return defaultCartState;
 };
