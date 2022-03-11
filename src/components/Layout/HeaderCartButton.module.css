@@ -39,6 +39,10 @@
   .bump {
     animation: bump 300ms ease-out;
   }
+
+  .custom_right_margin {
+    padding-left: 5px;
+  }
   
   @keyframes bump {
     0% {
